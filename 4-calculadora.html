@@ -34,7 +34,7 @@
       }
     </style>
   </head>
-  <body className="text-(--text) font-(--font-sans)">
+  <body class="text-(--text) font-(--font-sans)">
     <div id="root"></div>
 
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
@@ -100,8 +100,37 @@
         )
       }
 
+      function Calculator() {
+        return (
+          <Card
+            className={`flex flex-col gap-[1.625rem] w-[22.25rem] pt-14 px-8 pb-8`}
+          >
+            <div
+              className={`flex flex-col gap-2 px-[1.375] cursor-default select-none`}
+            >
+              <Text
+                as="div"
+                variant="muted"
+                className={`flex items-center justify-end`}
+              >
+                1 + 1
+              </Text>
+
+              <div className={`flex items-center justify-between`}>
+                <Text variant='muted'>=</Text>
+                <Text variant='blast'>2</Text>
+                </div>
+            </div>
+          </Card>
+        )
+      }
+
       function App() {
-        return <main className="py-28 px-4"></main>
+        return (
+          <main className="py-28 px-4">
+            <Calculator />
+          </main>
+        )
       }
 
       ReactDOM.createRoot(document.getElementById('root')).render(<App />)
